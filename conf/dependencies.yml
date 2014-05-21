@@ -1,0 +1,5 @@
+# Application dependencies
+
+require:
+    - play
+    - edu.uci.ics -> crawler4j 3.5
