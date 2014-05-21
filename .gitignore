@@ -1,0 +1,8 @@
+tmp
+modules
+lib
+test-result
+logs
+*.iml
+.idea
+.idea_modules
