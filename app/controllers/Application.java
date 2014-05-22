@@ -10,7 +10,11 @@ import models.*;
 public class Application extends Controller {
 
     public static void index() {
-        render();
+
+        List<Website> oldSites = Website.find(
+                "order by crawledAt desc"
+        ).from(1).fetch(5);
+        render(oldSites);
     }
 
 }

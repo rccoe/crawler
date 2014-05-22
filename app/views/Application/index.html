@@ -1,4 +1,22 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+#{if oldSites}
+<div class="old-sites">
+    <h3>Previously crawled sites</h3>
+
+    #{list items:oldSites, as:'oldSite'}
+    <div class="site">
+        <h2 class="site-url">
+            <a href="#">${oldSite.url}</a>
+        </h2>
+        <div class="site-metadata">
+                    <span class="site-date">
+                        ${oldSite.crawledAt.format('dd MMM yy')}
+                    </span>
+        </div>
+    </div>
+    #{/list}
+</div>
+
+#{/if}

@@ -10,6 +10,7 @@ public class Website extends Model {
 
     public String url;
     public boolean isCrawled;
+    public Date crawledAt;
 
     @OneToMany(mappedBy = "website", cascade = CascadeType.ALL)
     public List<Link> links;
@@ -18,11 +19,19 @@ public class Website extends Model {
         this.url = url;
         this.isCrawled = false;
         this.links = new ArrayList<Link>();
+        this.crawledAt = new Date();
     }
 
-    public Website addLink(String path) {
-        Link newLink = new Link(this, path).save();
-        this.links.add(newLink);
+    public Link addLink(String path) {
+        Link newLink = Link.findOrCreate(this, path);
+        this.addLink(newLink);
+        return newLink;
+    }
+
+    public Website addLink(Link link) {
+        if (this.links.contains(link))
+            return this;
+        this.links.add(link);
         this.save();
         return this;
     }

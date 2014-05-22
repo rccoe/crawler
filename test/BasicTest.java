@@ -36,6 +36,12 @@ public class BasicTest extends UnitTest {
         assertEquals(1, Link.count());
         assertEquals(1, root.links.size());
 
+        //Check for duplicate
+
+        root.addLink("/about");
+        assertEquals(1, Link.count());
+        assertEquals(1, root.links.size());
+
         //check deletion
 
         root.delete();
@@ -44,6 +50,36 @@ public class BasicTest extends UnitTest {
         assertEquals(0, Link.count());
 
 
+    }
+
+    @Test
+    public void testAddLinkToLink() {
+        Website root = new Website("google.com").save();
+
+        Link about = root.addLink("/about");
+
+        Link product = about.addTargetLink("/about/product");
+
+        assertNotNull(product);
+        assertNotNull(about);
+
+        //check counts
+        assertEquals(2, Link.count());
+        assertEquals(2, root.links.size());
+
+
+        // Check target/source
+        assertEquals(about.links.get(0), product);
+        assertEquals(0, product.links.size());
+
+
+    }
+
+    @Test
+    public void testFixture() {
+        Fixtures.loadModels("data.yml");
+
+        assertEquals(1, Website.count());
     }
 
 }
