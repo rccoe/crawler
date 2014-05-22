@@ -201,6 +201,11 @@ footer {
   bottom:50px;
 }
 
+.error {
+  font-weight:400;
+  color:#DE5353;
+}
+
 @media print, screen and (max-width: 960px) {
 
   div.wrapper {

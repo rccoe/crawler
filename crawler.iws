@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7497d8da-5e15-4843-89a8-298f81188219" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/Application/show.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.java" afterPath="$PROJECT_DIR$/app/controllers/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/BasicTest.java" afterPath="$PROJECT_DIR$/test/BasicTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Website.java" afterPath="$PROJECT_DIR$/app/models/Website.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler.iws" afterPath="$PROJECT_DIR$/crawler.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/data.yml" afterPath="$PROJECT_DIR$/test/data.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Application/index.html" afterPath="$PROJECT_DIR$/app/views/Application/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/initial-data.yml" afterPath="$PROJECT_DIR$/conf/initial-data.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/stylesheets/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.html" afterPath="$PROJECT_DIR$/app/views/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
     </list>
     <ignored path="crawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,6 +26,38 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/app/models/Website.java" line="27" class="models.Website" package="models">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/app/controllers/Application.java" line="51" class="controllers.Application.UrlExistenceValidator" package="controllers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -76,7 +106,7 @@
       <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+            <state line="61" column="0" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0" vertical-offset="771" max-vertical-offset="1170">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,10 +114,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JPQL.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/db/jpa/JPQL.java">
+      <file leaf-file-name="CheckWithCheck.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/data/validation/CheckWithCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="3975">
+            <state line="38" column="0" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="261" max-vertical-offset="660">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActionInvoker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/mvc/ActionInvoker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="581" column="0" selection-start="24337" selection-end="24337" vertical-scroll-proportion="0.0" vertical-offset="7780" max-vertical-offset="9255">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/Application/show.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="26" selection-start="51" selection-end="51" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="105">
               <folding />
             </state>
           </provider>
@@ -96,7 +144,7 @@
       <file leaf-file-name="Website.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Website.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+            <state line="14" column="0" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="915">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,64 +152,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/BasicTest.java">
+      <file leaf-file-name="MalformedURLException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/src.zip!/java/net/MalformedURLException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="0" selection-start="1891" selection-end="1891" vertical-scroll-proportion="0.0" vertical-offset="622" max-vertical-offset="1380">
+            <state line="37" column="13" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0" vertical-offset="73" max-vertical-offset="585">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/data.yml">
+      <file leaf-file-name="URL.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/src.zip!/java/net/URL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="109" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+            <state line="622" column="5" selection-start="25081" selection-end="25081" vertical-scroll-proportion="0.0" vertical-offset="8612" max-vertical-offset="19275">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="initial-data.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/initial-data.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="80" selection-start="784" selection-end="784" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="525">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/Application/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="19" selection-start="82" selection-end="82" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="420">
+            <state line="26" column="36" selection-start="653" selection-end="653" vertical-scroll-proportion="0.5412371" vertical-offset="180" max-vertical-offset="615">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="17" selection-start="337" selection-end="337" vertical-scroll-proportion="0.63981044" vertical-offset="0" max-vertical-offset="4185">
+            <state line="205" column="2" selection-start="2891" selection-end="2891" vertical-scroll-proportion="-10.961538" vertical-offset="2790" max-vertical-offset="4260">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.conf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <file leaf-file-name="routes" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="28" selection-start="2082" selection-end="2082" vertical-scroll-proportion="-6.230769" vertical-offset="798" max-vertical-offset="3345">
+            <state line="13" column="31" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
               <folding />
             </state>
           </provider>
@@ -183,17 +213,19 @@
         <option value="$PROJECT_DIR$/conf/dependencies.yml" />
         <option value="$PROJECT_DIR$/conf/messages" />
         <option value="$PROJECT_DIR$/app/BootStrap.java" />
-        <option value="$PROJECT_DIR$/app/models/Website.java" />
         <option value="$PROJECT_DIR$/app/models/Link.java" />
         <option value="$PROJECT_DIR$/test/data.yml" />
         <option value="$PROJECT_DIR$/test/BasicTest.java" />
-        <option value="$PROJECT_DIR$/app/controllers/Application.java" />
         <option value="$PROJECT_DIR$/conf/initial-data.yml" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
         <option value="$PROJECT_DIR$/app/views/main.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/styles.css" />
-        <option value="$PROJECT_DIR$/app/views/Application/index.html" />
+        <option value="$PROJECT_DIR$/app/views/Application/show.html" />
+        <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/public/stylesheets/main.css" />
+        <option value="$PROJECT_DIR$/app/models/Website.java" />
+        <option value="$PROJECT_DIR$/app/controllers/Application.java" />
+        <option value="$PROJECT_DIR$/app/views/Application/index.html" />
       </list>
     </option>
   </component>
@@ -441,6 +473,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RunManager" selected="Remote.Remote">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
@@ -610,6 +643,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880098" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39925835" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -624,7 +658,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -656,13 +689,6 @@
     <entry file="file://$PROJECT_DIR$/test/ApplicationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/messages">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="34" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
           <folding />
         </state>
       </provider>
@@ -718,24 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Website.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/application.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="28" selection-start="2082" selection-end="2082" vertical-scroll-proportion="-6.230769" vertical-offset="798" max-vertical-offset="3345">
@@ -757,16 +765,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Application/index.html">
+    <entry file="file://$PROJECT_DIR$/conf/messages">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="19" selection-start="82" selection-end="82" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="420">
+        <state line="3" column="34" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Application/show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="26" selection-start="51" selection-end="51" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="31" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/data/validation/URL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="17" selection-start="511" selection-end="511" vertical-scroll-proportion="0.4827586" vertical-offset="0" max-vertical-offset="435">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="337" selection-end="337" vertical-scroll-proportion="0.63981044" vertical-offset="0" max-vertical-offset="4185">
+        <state line="205" column="2" selection-start="2891" selection-end="2891" vertical-scroll-proportion="-10.961538" vertical-offset="2790" max-vertical-offset="4260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/mvc/ActionInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="581" column="0" selection-start="24337" selection-end="24337" vertical-scroll-proportion="0.0" vertical-offset="7780" max-vertical-offset="9255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/src.zip!/java/net/MalformedURLException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="13" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0" vertical-offset="73" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Website.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="915">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/src.zip!/java/net/URL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="622" column="5" selection-start="25081" selection-end="25081" vertical-scroll-proportion="0.0" vertical-offset="8612" max-vertical-offset="19275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0" vertical-offset="771" max-vertical-offset="1170">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/data/validation/CheckWithCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="261" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Application/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="36" selection-start="653" selection-end="653" vertical-scroll-proportion="0.5412371" vertical-offset="180" max-vertical-offset="615">
           <folding />
         </state>
       </provider>
