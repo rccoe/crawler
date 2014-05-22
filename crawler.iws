@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7497d8da-5e15-4843-89a8-298f81188219" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler.iml" afterPath="$PROJECT_DIR$/crawler.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler.ipr" afterPath="$PROJECT_DIR$/crawler.ipr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Link.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/DocViewerPlugin" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/DocViewerPlugin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/controllers.Application" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/controllers.Application" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/controllers.PlayDocumentation" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/controllers.PlayDocumentation" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/helpers.CheatSheetHelper$1" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/helpers.CheatSheetHelper$1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/helpers.CheatSheetHelper$2" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/helpers.CheatSheetHelper$2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/helpers.CheatSheetHelper$3" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/helpers.CheatSheetHelper$3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/helpers.CheatSheetHelper" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/helpers.CheatSheetHelper" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/BasicTest.java" afterPath="$PROJECT_DIR$/test/BasicTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Website.java" afterPath="$PROJECT_DIR$/app/models/Website.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_index.html" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_Application_index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_main.html" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_play__framework_templates_tags_welcome.html" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_play__framework_templates_tags_welcome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler.iws" afterPath="$PROJECT_DIR$/crawler.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/messages" afterPath="$PROJECT_DIR$/conf/messages" />
     </list>
     <ignored path="crawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,28 +79,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dependencies.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/dependencies.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="34" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="13" selection-start="109" selection-end="109" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="240">
+            <state line="9" column="13" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Website.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Website.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Website.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="247" selection-end="247" vertical-scroll-proportion="0.26888603" vertical-offset="0" max-vertical-offset="781">
+            <state line="28" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,11 +99,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.conf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <file leaf-file-name="messages" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/messages">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="6" selection-start="2672" selection-end="2672" vertical-scroll-proportion="0.0" vertical-offset="1028" max-vertical-offset="3345">
+            <state line="3" column="34" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ApplicationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/BasicTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="9" selection-start="602" selection-end="602" vertical-scroll-proportion="0.47493404" vertical-offset="0" max-vertical-offset="780">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Link.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Link.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="22" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#461#467#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,15 +171,18 @@
       <list>
         <option value="$PROJECT_DIR$/conf/dependencies.yml" />
         <option value="$PROJECT_DIR$/app/views/main.html" />
-        <option value="$PROJECT_DIR$/app/models/Website.java" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
+        <option value="$PROJECT_DIR$/conf/messages" />
+        <option value="$PROJECT_DIR$/app/models/Link.java" />
+        <option value="$PROJECT_DIR$/test/BasicTest.java" />
+        <option value="$PROJECT_DIR$/app/models/Website.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="78" />
+    <option name="x" value="554" />
     <option name="y" value="22" />
-    <option name="width" value="1362" />
+    <option name="width" value="885" />
     <option name="height" value="878" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -156,7 +192,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -195,6 +231,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,7 +495,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="78" y="22" width="1362" height="878" extended-state="0" />
+    <frame x="554" y="22" width="885" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -463,7 +513,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2496329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26553673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -510,13 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="109" selection-end="109" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="240">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/application.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="6" selection-start="2672" selection-end="2672" vertical-scroll-proportion="0.0" vertical-offset="1028" max-vertical-offset="3345">
@@ -524,12 +567,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/ApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/messages">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="34" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Link.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="22" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#461#467#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Website.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="247" selection-end="247" vertical-scroll-proportion="0.26888603" vertical-offset="0" max-vertical-offset="781">
+        <state line="28" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/BasicTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="602" selection-end="602" vertical-scroll-proportion="0.47493404" vertical-offset="0" max-vertical-offset="780">
+          <folding />
         </state>
       </provider>
     </entry>
