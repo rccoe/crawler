@@ -80,6 +80,10 @@ public class BasicTest extends UnitTest {
         Fixtures.loadModels("data.yml");
 
         assertEquals(1, Website.count());
+
+        Website google = Website.find("byUrl", "www.google.com").first();
+
+
     }
 
 }

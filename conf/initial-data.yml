@@ -1,0 +1,8 @@
+Website(google):
+    url: www.google.com
+    crawledAt: 2014-05-16 15:03:17 -5
+
+Website(fb):
+    url: www.facebook.com
+    crawledAt: 2014-05-16 16:03:17 -5
+
