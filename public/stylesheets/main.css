@@ -4,6 +4,7 @@
 .history {
 
 }
+
 body {
   padding:50px;
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -16,7 +17,7 @@ body {
 
   body > *  {
     margin: auto;
-    width: 500px;
+    width: auto;
     display: block;
     overflow: auto;
   }
@@ -54,6 +55,10 @@ a {
   color:#39c;
   font-weight:400;
   text-decoration:none;
+}
+
+a.red {
+    color:#E8076C;
 }
 
 a small {

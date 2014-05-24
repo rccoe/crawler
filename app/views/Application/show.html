@@ -1,6 +1,12 @@
 #{extends 'main.html' /}
 #{set title:website.url /}
 
+
+#{if (!website.isCrawled)}
+   <h1> Website not done crawling yet</h1>
+   <h3> Crawling began at ${website.crawledAt} </h3>
+#{/if}
+#{else}
 <h1> Found ${ website.links.size()} links for ${website.url}</h1>
 #{list items:website.links, as:'link'}
 <div class="link">
@@ -11,5 +17,5 @@
         <p> ${destLink.path}</p>
     #{/list}
 </div>
-
 #{/list}
+#{/else}

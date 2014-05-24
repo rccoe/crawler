@@ -59,7 +59,6 @@ public class CoeCrawler extends WebCrawler {
         if (myController.getCustomData() == null) {
             myController.setCustomData(page.getWebURL().getDomain());
         }
-        System.out.println("Visiting " + page.getWebURL().toString());
 
         if (page.getParseData() instanceof HtmlParseData) {
             String sourcePath = page.getWebURL().getPath();

@@ -1,12 +1,5 @@
 package controllers;
 
-import edu.uci.ics.crawler4j.crawler.CrawlConfig;
-import edu.uci.ics.crawler4j.crawler.CrawlController;
-import edu.uci.ics.crawler4j.fetcher.PageFetcher;
-import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
-import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
-import groovy.ui.SystemOutputInterceptor;
-import play.*;
 import play.data.validation.Check;
 import play.data.validation.CheckWith;
 import play.db.jpa.Transactional;
@@ -20,14 +13,18 @@ import java.util.*;
 
 import models.*;
 import util.CoeCrawlController;
-import util.CoeCrawler;
 
 public class Application extends Controller {
 
+
     public static void index() {
+        render();
+    }
+
+    public static void list() {
 
         List<Website> oldSites = Website.find("order by crawledAt desc").fetch(5);
-        render(oldSites);
+        renderJSON(oldSites);
     }
 
     @Transactional
@@ -44,9 +41,8 @@ public class Application extends Controller {
             url = "http://" + url;
         }
         Website website = Website.findOrCreate(url);
-        CoeCrawlController.crawl(website, 50);
 
-        show(website.id);
+        CoeCrawlController.crawl(website, 1000);
     }
 
     public static void show(Long id) {

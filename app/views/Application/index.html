@@ -1,7 +1,6 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{form @Application.crawlWebsite()}
 <p>
     <label for="url">Enter a Url: </label>
     <input type="text" name="url" id="url" />
@@ -10,36 +9,74 @@
     #{/ifErrors}
 </p>
 <p>
-    <input type="submit" value="Crawl" />
+    <input type="button" value="Crawl" id="crawlWebsite" />
 </p>
-#{/form}
 
-#{if oldSites}
-<div class="history">
+<div id="history">
     <h3>Previously crawled sites</h3>
 
-    #{list items:oldSites, as:'oldSite'}
-    <div class="site">
-        <h2 class="site-url">
-            <a href="@{Application.show(oldSite.id)}">${oldSite.url}</a>
-        </h2>
-        <div class="site-metadata">
-            <span class="site-date">
-                ${oldSite.crawledAt.format('dd MMM yy')}
-            </span>
-        </div>
-    </div>
-    #{/list}
+    <!--#{list items:oldSites, as:'oldSite'}-->
+    <!--<div class="site">-->
+        <!--<h2 class="site-url">-->
+            <!--<a href="@{Application.show(oldSite.id)}">${oldSite.url}</a>-->
+        <!--</h2>-->
+        <!--<div class="site-metadata">-->
+            <!--<span class="site-date">-->
+                <!--${oldSite.crawledAt.format('dd MMM yy')}-->
+            <!--</span>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--#{/list}-->
 </div>
 
-#{/if}
 
-<script>
+<script type="text/javascript">
+
+   var crawlWebsiteAction = #{jsAction @Application.crawlWebsite(':url') /};
+   var listHistoryAction = #{jsAction @list() /};
+
+   function crawlEventComplete(result) {
+        console.log(result)
+        alert("Done")
+        refreshHistory();
+    }
 
    $(document).ready(function()
    {
-      $(".hide").hide();
+      $("#history").hide();
+      $("#crawlWebsite").click( function() {
+        $.ajax( {type: "POST", url: crawlWebsiteAction({'url':$("#url").val()}),
+                 success: function(result) {crawlEventComplete(result)  }});
+      });
+
+        refreshHistory();
+    });
 
 
-   });
+
+    function refreshHistory() {
+
+      $.ajax( {type: "POST", url: listHistoryAction(), success: function(oldSites) {
+          $("#history").empty()
+          $.each(oldSites, function () {
+            console.log(this)
+            if (this.isCrawled == "true") {
+                $("#history").append(
+                    "<h3> <a href=/sites/" + this.id + " class=\"blue\">" + this.url + "</a></h3>")
+            }
+            else {
+                $("#history").append(
+                    "<h3> <a href=/sites/" + this.id + " class=\"red\">" + this.url + "</a></h3>")
+                $("#history").append("<small> (can take ~30 minutes to crawl) </small>")
+            }
+            $("#history").append(
+                "<p> Crawl started at: " + this.crawledAt + "</p>")
+            $("#history").show()
+            })
+          }
+       });
+    }
+
+
+
 </script>

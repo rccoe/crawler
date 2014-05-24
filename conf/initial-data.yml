@@ -1,6 +1,9 @@
 Website(google):
     url: www.google.com
     crawledAt: 2014-05-16 15:03:17 -5
+    isCrawled: true
+
+
 
 Website(fb):
     url: www.facebook.com

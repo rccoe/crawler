@@ -23,8 +23,9 @@ public class CoeCrawlController extends CrawlController{
 
     public static void crawl(Website website, int maxPages) {
         CrawlConfig config = new CrawlConfig();
+        website.crawledAt = new Date();
+        website.save();
         String tempFolder = Play.configuration.getProperty("play.tmp");
-        System.out.println(tempFolder);
         config.setCrawlStorageFolder(tempFolder);
         config.setPolitenessDelay(300);
         config.setMaxPagesToFetch(maxPages);
@@ -37,7 +38,7 @@ public class CoeCrawlController extends CrawlController{
             CoeCrawlController controller = new CoeCrawlController(config, pageFetcher, robotstxtServer);
             controller.addSeed(website.url);
 
-            controller.start(CoeCrawler.class, 1);
+            controller.start(CoeCrawler.class, 1, true);
 
             List<Object> crawlersLocalDataList = controller.getCrawlersLocalData();
 
@@ -67,6 +68,8 @@ public class CoeCrawlController extends CrawlController{
                 }
             }
             saveLinks(website, masterLinkMap);
+            website.isCrawled = true;
+            System.out.println(website.url + " Done, ready to check");
 
         }
         catch (Exception ex) {
@@ -75,14 +78,16 @@ public class CoeCrawlController extends CrawlController{
     }
 
     private static void saveLinks (Website website, Map<String, Set<String>> linkMap) {
+        System.out.println(new Date().toString() + " started saving");
         for (Map.Entry<String, Set<String>> entry : linkMap.entrySet()) {
 
             Link sourceLink = website.addOrFindLink(entry.getKey());
-            System.out.println("Saving " + sourceLink.path);
+
             for (String destPath : entry.getValue()) {
                 sourceLink.addTargetLink(destPath);
             }
         }
+        System.out.println(new Date().toString() + " stopped saving");
     }
 
     /*
@@ -94,6 +99,9 @@ public class CoeCrawlController extends CrawlController{
             3) There were several sleep() methods that were holding this back
 
      */
+
+
+//    REDO THIS WHOLE FUNCTION AS A FUTURE
     @Override
     protected <T extends WebCrawler> void start(final Class<T> _c, final int numberOfCrawlers, boolean isBlocking) {
         try {
