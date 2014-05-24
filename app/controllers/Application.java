@@ -1,8 +1,15 @@
 package controllers;
 
+import edu.uci.ics.crawler4j.crawler.CrawlConfig;
+import edu.uci.ics.crawler4j.crawler.CrawlController;
+import edu.uci.ics.crawler4j.fetcher.PageFetcher;
+import edu.uci.ics.crawler4j.robotstxt.RobotstxtConfig;
+import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
+import groovy.ui.SystemOutputInterceptor;
 import play.*;
 import play.data.validation.Check;
 import play.data.validation.CheckWith;
+import play.db.jpa.Transactional;
 import play.mvc.*;
 
 import java.io.IOException;
@@ -12,6 +19,8 @@ import java.net.URL;
 import java.util.*;
 
 import models.*;
+import util.CoeCrawlController;
+import util.CoeCrawler;
 
 public class Application extends Controller {
 
@@ -21,6 +30,7 @@ public class Application extends Controller {
         render(oldSites);
     }
 
+    @Transactional
     public static void crawlWebsite(@CheckWith(UrlExistenceValidator.class) String url) {
 
         if(validation.hasErrors()) {
@@ -29,6 +39,8 @@ public class Application extends Controller {
             index();
         }
         Website website = Website.findOrCreate(url);
+        CoeCrawlController.crawl(website, 100, 2);
+
         show(website.id);
     }
 
@@ -36,6 +48,8 @@ public class Application extends Controller {
         Website website = Website.findById(id);
         render(website);
     }
+
+
 
 
     static class UrlExistenceValidator extends Check {
@@ -54,11 +68,15 @@ public class Application extends Controller {
                 catch (MalformedURLException muex) {
                     url = new URL("http://" + urlString);
                 }
+                if (!url.getPath().isEmpty()) {
+                    setMessage(urlString + " contains a path, not just a hostname", urlString);
+                    return false;
+                }
                 final HttpURLConnection huc =  (HttpURLConnection) url.openConnection();
                 huc.setRequestMethod("HEAD");
                 huc.connect();
                 final int code = huc.getResponseCode();
-                setMessage("url.responseCode", Integer.toString(code) );
+                setMessage("URL didn't respond", Integer.toString(code) );
                 return code != 404;
             }
 

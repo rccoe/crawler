@@ -36,7 +36,7 @@ public class Website extends Model {
         return website;
     }
 
-    public Link addLink(String path) {
+    public Link addOrFindLink(String path) {
         Link newLink = Link.findOrCreate(this, path);
         this.addLink(newLink);
         return newLink;

@@ -1,2 +1,15 @@
 #{extends 'main.html' /}
 #{set title:website.url /}
+
+${website.links.count()}
+#{list items:website.links, as:'link'}
+<div class="link">
+    <h2 class="link.path">
+        ${link.path}
+    </h2>
+    #{list items:link.links, as:'destLink'}
+        <p> ${destLink.path}</p>
+    #{/list}
+</div>
+
+#{/list}

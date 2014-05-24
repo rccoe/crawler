@@ -1,5 +1,4 @@
 import org.junit.*;
-import java.util.*;
 import play.test.*;
 import models.*;
 
@@ -30,7 +29,7 @@ public class BasicTest extends UnitTest {
         // Create a new website and save it
         Website root = new Website("google.com").save();
 
-        root.addLink("/about");
+        root.addOrFindLink("/about");
 
         //check links
         assertEquals(1, Link.count());
@@ -38,7 +37,7 @@ public class BasicTest extends UnitTest {
 
         //Check for duplicate
 
-        root.addLink("/about");
+        root.addOrFindLink("/about");
         assertEquals(1, Link.count());
         assertEquals(1, root.links.size());
 
@@ -56,7 +55,7 @@ public class BasicTest extends UnitTest {
     public void testAddLinkToLink() {
         Website root = new Website("google.com").save();
 
-        Link about = root.addLink("/about");
+        Link about = root.addOrFindLink("/about");
 
         Link product = about.addTargetLink("/about/product");
 

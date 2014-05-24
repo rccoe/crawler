@@ -1,6 +1,5 @@
 package models;
 
-import java.lang.reflect.WildcardType;
 import java.util.*;
 import javax.persistence.*;
 
@@ -28,9 +27,11 @@ public class Link extends Model {
     }
 
     public Link addTargetLink(String path) {
-        Link link = this.website.addLink(path);
-        this.links.add(link);
-        this.save();
+        Link link = this.website.addOrFindLink(path);
+        if (!this.links.contains(link)) {
+            this.links.add(link);
+            this.save();
+        }
         return link;
     }
 
