@@ -11,13 +11,14 @@ public class Link extends Model {
     public String path;
 
     @ManyToOne
+    @JoinColumn(name = "website_id")
     public Website website;
 
     @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(name = "link_link",
             joinColumns = {@JoinColumn(name = "src_link_id") },
             inverseJoinColumns = { @JoinColumn(name = "dest_link_id")})
-    public List<Link> links;
+    public List<Link> links = new ArrayList<Link>();
 
 
     private Link(Website website, String path) {

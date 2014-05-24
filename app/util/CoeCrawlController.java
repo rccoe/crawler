@@ -11,10 +11,7 @@ import models.Link;
 import models.Website;
 import play.Play;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 
 public class CoeCrawlController extends CrawlController{
@@ -42,25 +39,48 @@ public class CoeCrawlController extends CrawlController{
 
             controller.start(CoeCrawler.class, numberOfCrawlers);
 
-            List<Object> crawlersLocalData = controller.getCrawlersLocalData();
+            List<Object> crawlersLocalDataList = controller.getCrawlersLocalData();
 
-            for (Object localData : crawlersLocalData) {
-                Map<WebURL, Set<WebURL>> linkMap = (Map<WebURL, Set<WebURL>>) localData;
-                saveLinks(website, linkMap);
+            Map<String, Set<String>> masterLinkMap;
+
+            // Ensure all links unique while in memory to avoid DB collisions
+            if (crawlersLocalDataList.size() == 1) {
+                masterLinkMap = (Map<String, Set<String>>) (crawlersLocalDataList.get(0));
             }
+            else {
+                masterLinkMap = new HashMap<String, Set<String>>();
+                for (Object crawlerLocalData : crawlersLocalDataList) {
+                    Map<String, Set<String>> crawlerLinkMap = (Map<String, Set<String>>) crawlerLocalData;
+                    for (Map.Entry<String, Set<String>> entry : crawlerLinkMap.entrySet()) {
+
+                        // Check if in master map
+                        Set<String> destUrls = masterLinkMap.get(entry.getKey());
+                        if (destUrls == null) {
+                            masterLinkMap.put(entry.getKey(), entry.getValue());
+                        }
+                        else {
+                            destUrls.addAll(entry.getValue());
+                        }
+
+                    }
+
+                }
+            }
+            saveLinks(website, masterLinkMap);
+
         }
         catch (Exception ex) {
             System.out.println(ex.toString());
         }
     }
 
-    private static void saveLinks (Website website, Map<WebURL, Set<WebURL>> linkMap) {
-        for (Map.Entry<WebURL, Set<WebURL>> entry : linkMap.entrySet()) {
+    private static void saveLinks (Website website, Map<String, Set<String>> linkMap) {
+        for (Map.Entry<String, Set<String>> entry : linkMap.entrySet()) {
 
-            Link sourceLink = Link.findOrCreate(website, entry.getKey().getPath());
+            Link sourceLink = Link.findOrCreate(website, entry.getKey());
             System.out.println("Saving " + sourceLink.path);
-            for (WebURL destUrl : entry.getValue()) {
-                sourceLink.addTargetLink(destUrl.getPath());
+            for (String destPath : entry.getValue()) {
+                sourceLink.addTargetLink(destPath);
             }
         }
     }

@@ -20,10 +20,10 @@ public class CoeCrawler extends WebCrawler {
 
     private int linksVisited;
 
-    private Map<WebURL, Set<WebURL>> localLinkMap;
+    private Map<String, Set<String>> localLinkMap;
 
     public CoeCrawler() {
-        this.localLinkMap = new HashMap<WebURL, Set<WebURL>>();
+        this.localLinkMap = new HashMap<String, Set<String>>();
     }
 
     // Only html files
@@ -64,34 +64,31 @@ public class CoeCrawler extends WebCrawler {
             HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
             List<WebURL> destUrls = htmlParseData.getOutgoingUrls();
 
-            filterUnusableUrls(destUrls);
+            Set<String> destPathSet = filterUsableUrlsToPaths(destUrls);
 
             if (!localLinkMap.containsKey(sourceUrl))
-                localLinkMap.put(page.getWebURL(), new HashSet<WebURL>(destUrls));
+                localLinkMap.put(page.getWebURL().getPath(), destPathSet);
             else {
-                Set<WebURL> destSet = localLinkMap.get(sourceUrl);
-                for (WebURL destUrl : destUrls) {
-                    destSet.add(destUrl);
-                }
+                Set<String> masterDestSet = localLinkMap.get(sourceUrl);
+                masterDestSet.addAll(destPathSet);
             }
         }
     }
 
-    private void filterUnusableUrls(List<WebURL> urls) {
-        Iterator<WebURL> iterator = urls.iterator();
+    private Set<String> filterUsableUrlsToPaths(List<WebURL> urls) {
         String domain = (String)myController.getCustomData();
+        Set<String> pathSet = new HashSet<String>();
 
-
-        while (iterator.hasNext()) {
-            WebURL url = iterator.next();
-            if (FILTERS.matcher(url.getPath()).matches()) {
-                iterator.remove();
+        for (WebURL url : urls) {
+            if (!url.getDomain().equals(domain)) {
                 break;
             }
-            if (!url.getDomain().equals(domain)) {
-                iterator.remove();
+            if (FILTERS.matcher(url.getPath()).matches()) {
+                break;
             }
+            pathSet.add(url.getPath());
         }
+        return pathSet;
     }
 
     // This function is called by controller to get the local data of this

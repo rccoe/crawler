@@ -13,7 +13,7 @@ public class BasicTest extends UnitTest {
     @Test
     public void testCreateAndRetrieveWebsite(){
         // Create a new website and save it
-        new Website("google.com").save();
+        Website.findOrCreate("google.com");
 
         // Check website created
         Website google = Website.find("byUrl", "google.com").first();
@@ -27,7 +27,7 @@ public class BasicTest extends UnitTest {
     @Test
     public void testCreateLink(){
         // Create a new website and save it
-        Website root = new Website("google.com").save();
+        Website root = Website.findOrCreate("google.com");
 
         root.addOrFindLink("/about");
 
@@ -53,7 +53,7 @@ public class BasicTest extends UnitTest {
 
     @Test
     public void testAddLinkToLink() {
-        Website root = new Website("google.com").save();
+        Website root = Website.findOrCreate("google.com");
 
         Link about = root.addOrFindLink("/about");
 
