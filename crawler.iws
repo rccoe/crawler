@@ -8,6 +8,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crawler.iws" afterPath="$PROJECT_DIR$/crawler.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Application/index.html" afterPath="$PROJECT_DIR$/app/views/Application/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/initial-data.yml" afterPath="$PROJECT_DIR$/conf/initial-data.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/main.css" afterPath="$PROJECT_DIR$/public/stylesheets/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.html" afterPath="$PROJECT_DIR$/app/views/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Application/show.html" afterPath="$PROJECT_DIR$/app/views/Application/show.html" />
     </list>
     <ignored path="crawler.iws" />
@@ -27,37 +31,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/app/util/CoeCrawlController.java" line="50" class="util.CoeCrawlController" package="util">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/app/util/CoeCrawlController.java" line="61" class="util.CoeCrawlController" package="util">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/app/util/CoeCrawlController.java" line="82" class="util.CoeCrawlController" package="util">
+      <breakpoint url="file://$PROJECT_DIR$/app/controllers/Application.java" line="48" class="controllers.Application" package="controllers">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -119,10 +93,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Application.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="11" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="1215">
+            <state line="44" column="38" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.31732777" vertical-offset="328" max-vertical-offset="1275">
               <folding />
             </state>
           </provider>
@@ -131,8 +105,10 @@
       <file leaf-file-name="Bootstrap.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Bootstrap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-              <folding />
+            <state line="9" column="4" selection-start="136" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,48 +116,119 @@
       <file leaf-file-name="CoeCrawlController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/util/CoeCrawlController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="43" selection-start="3150" selection-end="3150" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="3465">
+            <state line="97" column="28" selection-start="3834" selection-end="3834" vertical-scroll-proportion="-6.576923" vertical-offset="1284" max-vertical-offset="3585">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4012#4020#0" expanded="true" />
-                <element signature="e#4626#9699#0" expanded="true" />
-                <element signature="e#9684#9685#0" expanded="true" />
+                <element signature="e#4278#4286#0" expanded="true" />
+                <element signature="e#4892#9965#0" expanded="true" />
+                <element signature="e#9950#9951#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="system.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system.properties">
+      <file leaf-file-name="F.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/libs/F.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="24" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+            <state line="23" column="24" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14580">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1018#1019#0" expanded="false" />
+                <element signature="e#1056#1057#0" expanded="false" />
+                <element signature="e#1088#1089#0" expanded="false" />
+                <element signature="e#1125#1126#0" expanded="false" />
+                <element signature="e#1887#1909#0" expanded="false" />
+                <element signature="e#5006#5468#0" expanded="false" />
+                <element signature="e#5453#5454#0" expanded="false" />
+                <element signature="e#5861#5876#0" expanded="false" />
+                <element signature="e#5979#6461#0" expanded="false" />
+                <element signature="e#6446#6447#0" expanded="false" />
+                <element signature="e#6671#6686#0" expanded="false" />
+                <element signature="e#6793#7291#0" expanded="false" />
+                <element signature="e#7276#7277#0" expanded="false" />
+                <element signature="e#7525#7543#0" expanded="false" />
+                <element signature="e#7654#8171#0" expanded="false" />
+                <element signature="e#8156#8157#0" expanded="false" />
+                <element signature="e#8429#8450#0" expanded="false" />
+                <element signature="e#8565#9101#0" expanded="false" />
+                <element signature="e#9086#9087#0" expanded="false" />
+                <element signature="e#9339#9374#0" expanded="false" />
+                <element signature="e#9530#9742#0" expanded="false" />
+                <element signature="e#9723#9724#0" expanded="false" />
+                <element signature="e#9967#9983#0" expanded="false" />
+                <element signature="e#10104#10746#0" expanded="false" />
+                <element signature="e#10465#10471#0" expanded="false" />
+                <element signature="e#10620#10626#0" expanded="false" />
+                <element signature="e#10731#10732#0" expanded="false" />
+                <element signature="e#10980#10995#0" expanded="false" />
+                <element signature="e#11120#11914#0" expanded="false" />
+                <element signature="e#11477#11486#0" expanded="false" />
+                <element signature="e#11631#11640#0" expanded="false" />
+                <element signature="e#11785#11794#0" expanded="false" />
+                <element signature="e#11899#11900#0" expanded="false" />
+                <element signature="e#12178#12196#0" expanded="false" />
+                <element signature="e#12325#13285#0" expanded="false" />
+                <element signature="e#12682#12694#0" expanded="false" />
+                <element signature="e#12839#12851#0" expanded="false" />
+                <element signature="e#12996#13008#0" expanded="false" />
+                <element signature="e#13153#13165#0" expanded="false" />
+                <element signature="e#13270#13271#0" expanded="false" />
+                <element signature="e#13579#13600#0" expanded="false" />
+                <element signature="e#13733#14866#0" expanded="false" />
+                <element signature="e#14090#14105#0" expanded="false" />
+                <element signature="e#14250#14265#0" expanded="false" />
+                <element signature="e#14410#14425#0" expanded="false" />
+                <element signature="e#14570#14585#0" expanded="false" />
+                <element signature="e#14730#14745#0" expanded="false" />
+                <element signature="e#14851#14852#0" expanded="false" />
+                <element signature="e#15089#15682#0" expanded="false" />
+                <element signature="e#15667#15668#0" expanded="false" />
+                <element signature="e#16504#16661#0" expanded="false" />
+                <element signature="e#16646#16647#0" expanded="false" />
+                <element signature="e#19781#19798#0" expanded="false" />
+                <element signature="e#19971#19987#0" expanded="false" />
+                <element signature="e#20820#20834#0" expanded="false" />
+                <element signature="e#22212#22229#0" expanded="false" />
+                <element signature="e#23847#23855#0" expanded="false" />
+                <element signature="e#31223#31524#0" expanded="false" />
+                <element signature="e#31509#31510#0" expanded="false" />
+                <element signature="e#31591#31872#0" expanded="false" />
+                <element signature="e#31861#31862#0" expanded="false" />
+                <element signature="e#31971#32414#0" expanded="false" />
+                <element signature="e#32399#32400#0" expanded="false" />
+                <element signature="e#32526#32831#0" expanded="false" />
+                <element signature="e#32816#32817#0" expanded="false" />
+                <element signature="e#32936#33239#0" expanded="false" />
+                <element signature="e#33224#33225#0" expanded="false" />
+                <element signature="e#33335#33615#0" expanded="false" />
+                <element signature="e#33600#33601#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Thread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="674" column="29" selection-start="25309" selection-end="25309" vertical-scroll-proportion="0.0" vertical-offset="9680" max-vertical-offset="29910">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Website.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Website.java">
+      <file leaf-file-name="WebCrawler.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/crawler4j-3.5.jar!/edu/uci/ics/crawler4j/crawler/WebCrawler.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="16" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="795">
+            <state line="20" column="16" selection-start="848" selection-end="848" vertical-scroll-proportion="3.92" vertical-offset="383" max-vertical-offset="840">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.conf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="25" selection-start="2079" selection-end="2079" vertical-scroll-proportion="-6.8461537" vertical-offset="782" max-vertical-offset="3390">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/Application/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="3" selection-start="799" selection-end="799" vertical-scroll-proportion="0.79345953" vertical-offset="109" max-vertical-offset="765">
+            <state line="16" column="27" selection-start="644" selection-end="644" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="495">
               <folding />
             </state>
           </provider>
@@ -190,34 +237,22 @@
       <file leaf-file-name="CoeCrawler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/util/CoeCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="59" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.0" vertical-offset="745" max-vertical-offset="1620">
+            <state line="60" column="9" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1605">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2607#2615#0" expanded="true" />
-                <element signature="e#3080#3081#0" expanded="true" />
-                <element signature="e#3120#3121#0" expanded="true" />
+                <element signature="e#2536#2544#0" expanded="true" />
+                <element signature="e#3009#3010#0" expanded="true" />
+                <element signature="e#3049#3050#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebCrawler.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/crawler4j-3.5.jar!/edu/uci/ics/crawler4j/crawler/WebCrawler.class">
+      <file leaf-file-name="initial-data.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/initial-data.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="16" selection-start="1653" selection-end="1653" vertical-scroll-proportion="-5.28" vertical-offset="423" max-vertical-offset="840">
+            <state line="5" column="0" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Link.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Link.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="20" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="810">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#493#499#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -239,11 +274,7 @@
         <option value="$PROJECT_DIR$/conf/messages" />
         <option value="$PROJECT_DIR$/app/BootStrap.java" />
         <option value="$PROJECT_DIR$/test/data.yml" />
-        <option value="$PROJECT_DIR$/conf/initial-data.yml" />
-        <option value="$PROJECT_DIR$/app/views/main.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/styles.css" />
-        <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/public/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/app/util/CoeCrawlerData.java" />
         <option value="$PROJECT_DIR$/app/util/CoeCrawlerDataUpdater.java" />
         <option value="$PROJECT_DIR$/app/util/CoeCrawlerLocalDat.java" />
@@ -253,11 +284,16 @@
         <option value="$PROJECT_DIR$/app/models/Link.java" />
         <option value="$PROJECT_DIR$/system.properties" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
-        <option value="$PROJECT_DIR$/app/views/Application/show.html" />
-        <option value="$PROJECT_DIR$/app/controllers/Application.java" />
         <option value="$PROJECT_DIR$/app/util/CoeCrawler.java" />
-        <option value="$PROJECT_DIR$/app/util/CoeCrawlController.java" />
+        <option value="$PROJECT_DIR$/app/views/main.html" />
+        <option value="$PROJECT_DIR$/conf/routes" />
+        <option value="$PROJECT_DIR$/app/views/Application/show.html" />
+        <option value="$PROJECT_DIR$/public/stylesheets/main.css" />
+        <option value="$PROJECT_DIR$/conf/initial-data.yml" />
+        <option value="$PROJECT_DIR$/app/util/CoeCrawlerJob.java" />
         <option value="$PROJECT_DIR$/app/views/Application/index.html" />
+        <option value="$PROJECT_DIR$/app/util/CoeCrawlController.java" />
+        <option value="$PROJECT_DIR$/app/controllers/Application.java" />
       </list>
     </option>
   </component>
@@ -341,6 +377,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -675,25 +729,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="554" y="22" width="885" height="878" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880098" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32880098" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16069221" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29666254" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24180791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24180791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -819,20 +873,6 @@
         <state line="47" column="0" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="415" max-vertical-offset="3975" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/initial-data.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="80" selection-start="784" selection-end="784" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/messages">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="34" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
@@ -840,23 +880,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="31" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/data/validation/URL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="17" selection-start="511" selection-end="511" vertical-scroll-proportion="0.4827586" vertical-offset="0" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="2" selection-start="2891" selection-end="2891" vertical-scroll-proportion="0.0" vertical-offset="2790" max-vertical-offset="4260">
           <folding />
         </state>
       </provider>
@@ -920,13 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Bootstrap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/crawler4j-3.5.jar!/edu/uci/ics/crawler4j/crawler/CrawlController.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="70" selection-start="1265" selection-end="1265" vertical-scroll-proportion="-5.6" vertical-offset="175" max-vertical-offset="1020">
@@ -937,13 +956,6 @@
     <entry file="jar://$PROJECT_DIR$/lib/crawler4j-3.5.jar!/edu/uci/ics/crawler4j/parser/HtmlParseData.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="67" selection-start="939" selection-end="946" vertical-scroll-proportion="0.4923077" vertical-offset="215" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/crawler4j-3.5.jar!/edu/uci/ics/crawler4j/crawler/WebCrawler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="16" selection-start="1653" selection-end="1653" vertical-scroll-proportion="-5.28" vertical-offset="423" max-vertical-offset="840">
           <folding />
         </state>
       </provider>
@@ -983,38 +995,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Application/show.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="60" selection-start="113" selection-end="113" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="11" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.0" vertical-offset="277" max-vertical-offset="1215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Link.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="20" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="810">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#493#499#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/util/CoeCrawlController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="43" selection-start="3150" selection-end="3150" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="3465">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4012#4020#0" expanded="true" />
-            <element signature="e#4626#9699#0" expanded="true" />
-            <element signature="e#9684#9685#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1026,21 +1012,183 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="18" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="27" selection-start="644" selection-end="644" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Application/show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="26" selection-start="80" selection-end="80" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/initial-data.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="100" selection-end="100" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/crawler4j-3.5.jar!/edu/uci/ics/crawler4j/crawler/WebCrawler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="16" selection-start="848" selection-end="848" vertical-scroll-proportion="3.92" vertical-offset="383" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="674" column="29" selection-start="25309" selection-end="25309" vertical-scroll-proportion="0.0" vertical-offset="9680" max-vertical-offset="29910">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/util/CoeCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="59" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.0" vertical-offset="745" max-vertical-offset="1620">
+        <state line="60" column="9" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1605">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2607#2615#0" expanded="true" />
-            <element signature="e#3080#3081#0" expanded="true" />
-            <element signature="e#3120#3121#0" expanded="true" />
+            <element signature="e#2536#2544#0" expanded="true" />
+            <element signature="e#3009#3010#0" expanded="true" />
+            <element signature="e#3049#3050#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/libs/F.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="24" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14580">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1018#1019#0" expanded="false" />
+            <element signature="e#1056#1057#0" expanded="false" />
+            <element signature="e#1088#1089#0" expanded="false" />
+            <element signature="e#1125#1126#0" expanded="false" />
+            <element signature="e#1887#1909#0" expanded="false" />
+            <element signature="e#5006#5468#0" expanded="false" />
+            <element signature="e#5453#5454#0" expanded="false" />
+            <element signature="e#5861#5876#0" expanded="false" />
+            <element signature="e#5979#6461#0" expanded="false" />
+            <element signature="e#6446#6447#0" expanded="false" />
+            <element signature="e#6671#6686#0" expanded="false" />
+            <element signature="e#6793#7291#0" expanded="false" />
+            <element signature="e#7276#7277#0" expanded="false" />
+            <element signature="e#7525#7543#0" expanded="false" />
+            <element signature="e#7654#8171#0" expanded="false" />
+            <element signature="e#8156#8157#0" expanded="false" />
+            <element signature="e#8429#8450#0" expanded="false" />
+            <element signature="e#8565#9101#0" expanded="false" />
+            <element signature="e#9086#9087#0" expanded="false" />
+            <element signature="e#9339#9374#0" expanded="false" />
+            <element signature="e#9530#9742#0" expanded="false" />
+            <element signature="e#9723#9724#0" expanded="false" />
+            <element signature="e#9967#9983#0" expanded="false" />
+            <element signature="e#10104#10746#0" expanded="false" />
+            <element signature="e#10465#10471#0" expanded="false" />
+            <element signature="e#10620#10626#0" expanded="false" />
+            <element signature="e#10731#10732#0" expanded="false" />
+            <element signature="e#10980#10995#0" expanded="false" />
+            <element signature="e#11120#11914#0" expanded="false" />
+            <element signature="e#11477#11486#0" expanded="false" />
+            <element signature="e#11631#11640#0" expanded="false" />
+            <element signature="e#11785#11794#0" expanded="false" />
+            <element signature="e#11899#11900#0" expanded="false" />
+            <element signature="e#12178#12196#0" expanded="false" />
+            <element signature="e#12325#13285#0" expanded="false" />
+            <element signature="e#12682#12694#0" expanded="false" />
+            <element signature="e#12839#12851#0" expanded="false" />
+            <element signature="e#12996#13008#0" expanded="false" />
+            <element signature="e#13153#13165#0" expanded="false" />
+            <element signature="e#13270#13271#0" expanded="false" />
+            <element signature="e#13579#13600#0" expanded="false" />
+            <element signature="e#13733#14866#0" expanded="false" />
+            <element signature="e#14090#14105#0" expanded="false" />
+            <element signature="e#14250#14265#0" expanded="false" />
+            <element signature="e#14410#14425#0" expanded="false" />
+            <element signature="e#14570#14585#0" expanded="false" />
+            <element signature="e#14730#14745#0" expanded="false" />
+            <element signature="e#14851#14852#0" expanded="false" />
+            <element signature="e#15089#15682#0" expanded="false" />
+            <element signature="e#15667#15668#0" expanded="false" />
+            <element signature="e#16504#16661#0" expanded="false" />
+            <element signature="e#16646#16647#0" expanded="false" />
+            <element signature="e#19781#19798#0" expanded="false" />
+            <element signature="e#19971#19987#0" expanded="false" />
+            <element signature="e#20820#20834#0" expanded="false" />
+            <element signature="e#22212#22229#0" expanded="false" />
+            <element signature="e#23847#23855#0" expanded="false" />
+            <element signature="e#31223#31524#0" expanded="false" />
+            <element signature="e#31509#31510#0" expanded="false" />
+            <element signature="e#31591#31872#0" expanded="false" />
+            <element signature="e#31861#31862#0" expanded="false" />
+            <element signature="e#31971#32414#0" expanded="false" />
+            <element signature="e#32399#32400#0" expanded="false" />
+            <element signature="e#32526#32831#0" expanded="false" />
+            <element signature="e#32816#32817#0" expanded="false" />
+            <element signature="e#32936#33239#0" expanded="false" />
+            <element signature="e#33224#33225#0" expanded="false" />
+            <element signature="e#33335#33615#0" expanded="false" />
+            <element signature="e#33600#33601#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Bootstrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="4" selection-start="136" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/play12/1.2.7/libexec/framework/src/play/jobs/Job.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="12" selection-start="3697" selection-end="3697" vertical-scroll-proportion="0.4321503" vertical-offset="1668" max-vertical-offset="2565">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="16" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0" vertical-offset="2550" max-vertical-offset="4335">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Application/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="3" selection-start="799" selection-end="799" vertical-scroll-proportion="0.79345953" vertical-offset="109" max-vertical-offset="765">
+        <state line="58" column="42" selection-start="1494" selection-end="1494" vertical-scroll-proportion="-6.25" vertical-offset="720" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/util/CoeCrawlController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="28" selection-start="3834" selection-end="3834" vertical-scroll-proportion="-6.576923" vertical-offset="1284" max-vertical-offset="3585">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4278#4286#0" expanded="true" />
+            <element signature="e#4892#9965#0" expanded="true" />
+            <element signature="e#9950#9951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="38" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.31732777" vertical-offset="328" max-vertical-offset="1275">
           <folding />
         </state>
       </provider>
