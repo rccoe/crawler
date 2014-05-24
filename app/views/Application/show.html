@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:website.url /}
 
-${website.links.count()}
+<h1> Found ${ website.links.size()} links for ${website.url}</h1>
 #{list items:website.links, as:'link'}
 <div class="link">
     <h2 class="link.path">

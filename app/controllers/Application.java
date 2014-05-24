@@ -38,8 +38,13 @@ public class Application extends Controller {
             validation.keep(); // keep the errors for the next request
             index();
         }
+        try {
+            URL urlObject = new URL(url);
+        } catch (MalformedURLException mux ) {/* already validated)*/
+            url = "http://" + url;
+        }
         Website website = Website.findOrCreate(url);
-        CoeCrawlController.crawl(website, 100, 2);
+        CoeCrawlController.crawl(website, 50);
 
         show(website.id);
     }

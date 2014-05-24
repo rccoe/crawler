@@ -19,6 +19,7 @@ public class CoeCrawler extends WebCrawler {
 
 
     private int linksVisited;
+    private String rootDomain;
 
     private Map<String, Set<String>> localLinkMap;
 
@@ -39,7 +40,7 @@ public class CoeCrawler extends WebCrawler {
         if (FILTERS.matcher(href).matches())
             return false;
 
-        String rootDomain = (String) myController.getCustomData();
+        rootDomain = (String) myController.getCustomData();
         if (rootDomain == null)
             return true;
         if (!url.getDomain().equals(rootDomain))
@@ -58,18 +59,19 @@ public class CoeCrawler extends WebCrawler {
         if (myController.getCustomData() == null) {
             myController.setCustomData(page.getWebURL().getDomain());
         }
+        System.out.println("Visiting " + page.getWebURL().toString());
 
         if (page.getParseData() instanceof HtmlParseData) {
-            WebURL sourceUrl = page.getWebURL();
+            String sourcePath = page.getWebURL().getPath();
             HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
             List<WebURL> destUrls = htmlParseData.getOutgoingUrls();
 
             Set<String> destPathSet = filterUsableUrlsToPaths(destUrls);
 
-            if (!localLinkMap.containsKey(sourceUrl))
+            if (!localLinkMap.containsKey(sourcePath))
                 localLinkMap.put(page.getWebURL().getPath(), destPathSet);
             else {
-                Set<String> masterDestSet = localLinkMap.get(sourceUrl);
+                Set<String> masterDestSet = localLinkMap.get(sourcePath);
                 masterDestSet.addAll(destPathSet);
             }
         }

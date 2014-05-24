@@ -21,12 +21,12 @@ public class CoeCrawlController extends CrawlController{
         super(config, pageFetcher, robotstxtServer);
     }
 
-    public static void crawl(Website website, int maxPages, int numberOfCrawlers) {
+    public static void crawl(Website website, int maxPages) {
         CrawlConfig config = new CrawlConfig();
         String tempFolder = Play.configuration.getProperty("play.tmp");
         System.out.println(tempFolder);
         config.setCrawlStorageFolder(tempFolder);
-        config.setPolitenessDelay(1000);
+        config.setPolitenessDelay(300);
         config.setMaxPagesToFetch(maxPages);
 
         PageFetcher pageFetcher = new PageFetcher(config);
@@ -37,7 +37,7 @@ public class CoeCrawlController extends CrawlController{
             CoeCrawlController controller = new CoeCrawlController(config, pageFetcher, robotstxtServer);
             controller.addSeed(website.url);
 
-            controller.start(CoeCrawler.class, numberOfCrawlers);
+            controller.start(CoeCrawler.class, 1);
 
             List<Object> crawlersLocalDataList = controller.getCrawlersLocalData();
 
@@ -77,7 +77,7 @@ public class CoeCrawlController extends CrawlController{
     private static void saveLinks (Website website, Map<String, Set<String>> linkMap) {
         for (Map.Entry<String, Set<String>> entry : linkMap.entrySet()) {
 
-            Link sourceLink = Link.findOrCreate(website, entry.getKey());
+            Link sourceLink = website.addOrFindLink(entry.getKey());
             System.out.println("Saving " + sourceLink.path);
             for (String destPath : entry.getValue()) {
                 sourceLink.addTargetLink(destPath);
@@ -85,7 +85,15 @@ public class CoeCrawlController extends CrawlController{
         }
     }
 
+    /*
+        This method needed overriding for the following reasons:
 
+            1) We are only checking 1 host, so politeness restricts our request
+               frequency, so parallel threads is useless
+            2) The implementation for concurrency was bad (nonexistent)
+            3) There were several sleep() methods that were holding this back
+
+     */
     @Override
     protected <T extends WebCrawler> void start(final Class<T> _c, final int numberOfCrawlers, boolean isBlocking) {
         try {
@@ -115,7 +123,7 @@ public class CoeCrawlController extends CrawlController{
                         synchronized (waitingLock) {
 
                             while (true) {
-                                sleep(10);
+                                Thread.sleep(100);
                                 boolean someoneIsWorking = false;
                                 for (int i = 0; i < threads.size(); i++) {
                                     Thread thread = threads.get(i);
@@ -141,7 +149,7 @@ public class CoeCrawlController extends CrawlController{
                                     // are
                                     // alive.
                                     System.out.println("It looks like no thread is working, waiting for 1 second to make sure...");
-                                    sleep(1);
+//                                    sleep(1);
                                     // Annoyingly slow
 
                                     someoneIsWorking = false;
@@ -158,7 +166,7 @@ public class CoeCrawlController extends CrawlController{
                                                 continue;
                                             }
                                             System.out.println("No thread is working and no more URLs are in queue waiting for another 1 second to make sure...");
-                                            sleep(1);
+//                                            sleep(1);
                                             // Annoyingly slow
                                             queueLength = frontier.getQueueLength();
                                             if (queueLength > 0) {
@@ -178,7 +186,7 @@ public class CoeCrawlController extends CrawlController{
                                         }
 
                                         System.out.println("Waiting for 1 second before final clean up...");
-                                        sleep(1);
+//                                        sleep(1);
                                         // Annoyingly slow
 
                                         frontier.close();
