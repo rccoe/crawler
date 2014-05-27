@@ -62,22 +62,35 @@ public class    CoeCrawler extends WebCrawler {
         }
 
         if (page.getParseData() instanceof HtmlParseData) {
-            String parentUrl = page.getWebURL().getParentUrl();
+            String sourcePath = page.getWebURL().getPath();
+            HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
+            List<WebURL> destUrls = htmlParseData.getOutgoingUrls();
 
-            WebURL parentWebURL = new WebURL();
-            parentWebURL.setURL(parentUrl);
-            String sourcePath = parentWebURL.getPath();
+            Set<String> destPathSet = filterUsableUrlsToPaths(destUrls);
 
-            if (!localLinkMap.containsKey(sourcePath)) {
-                Set<String> destPathSet = new HashSet<String>();
-                destPathSet.add(page.getWebURL().getPath());
-                localLinkMap.put(sourcePath, destPathSet);
-            }
+            if (!localLinkMap.containsKey(sourcePath))
+                localLinkMap.put(page.getWebURL().getPath(), destPathSet);
             else {
                 Set<String> masterDestSet = localLinkMap.get(sourcePath);
-                masterDestSet.add(page.getWebURL().getPath());
+                masterDestSet.addAll(destPathSet);
             }
         }
+    }
+
+    private Set<String> filterUsableUrlsToPaths(List<WebURL> urls) {
+        String domain = (String)myController.getCustomData();
+        Set<String> pathSet = new HashSet<String>();
+
+        for (WebURL url : urls) {
+            if (!url.getDomain().equals(domain)) {
+                continue;
+            }
+            if (FILTERS.matcher(url.getPath()).matches()) {
+                continue;
+            }
+            pathSet.add(url.getPath());
+        }
+        return pathSet;
     }
 
 

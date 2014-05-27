@@ -27,6 +27,17 @@ public class Link extends Model {
         this.links = new ArrayList<Link>();
     }
 
+    public void addTargetLinkIfExists(String path) {
+        Link link = Link.find("byWebsiteAndPath", website, path).first();
+        if (link == null || this == link)
+            return;
+        if (!this.links.contains(link)) {
+            this.links.add(link);
+            this.save();
+        }
+        return;
+    }
+
     public Link addTargetLink(String path) {
         Link link = this.website.addOrFindLink(path);
         if (this == link)

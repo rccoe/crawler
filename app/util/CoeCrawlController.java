@@ -89,7 +89,7 @@ public class CoeCrawlController extends CrawlController{
             Link sourceLink = website.addOrFindLink(entry.getKey());
 
             for (String destPath : entry.getValue()) {
-                sourceLink.addTargetLink(destPath);
+                sourceLink.addTargetLinkIfExists(destPath);
                 System.out.println("Saved " + i++);
             }
         }
