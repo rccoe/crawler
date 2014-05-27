@@ -5,7 +5,7 @@
 # Home page
 GET     /                                       Application.index
 
-POST    /application/list                        Application.list
+POST    /application/list                       Application.list
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
@@ -13,9 +13,11 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
-GET     /sites/{id}                            Application.show
+GET     /sites/{id}                             Application.show
 
 POST    /crawlWebsite                           Application.crawlWebsite
+
+POST    /getLinksFromWebsite/{id}               Application.getLinksFromWebsite
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

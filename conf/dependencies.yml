@@ -3,3 +3,4 @@
 require:
     - play
     - edu.uci.ics -> crawler4j 3.5
+    - net.sf.flexjson -> flexjson 2.1

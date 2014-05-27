@@ -29,6 +29,8 @@ public class Link extends Model {
 
     public Link addTargetLink(String path) {
         Link link = this.website.addOrFindLink(path);
+        if (this == link)
+           return link;
         if (!this.links.contains(link)) {
             this.links.add(link);
             this.save();

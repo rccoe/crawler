@@ -1,8 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
 
-.history {
+.node {
+  font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
+.link {
+  stroke: steelblue;
+  stroke-opacity: .4;
+  fill: none;
 }
 
 body {

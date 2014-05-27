@@ -1,5 +1,9 @@
 package controllers;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import flexjson.JSONSerializer;
+import flexjson.transformer.DateTransformer;
 import play.data.validation.Check;
 import play.data.validation.CheckWith;
 import play.db.jpa.Transactional;
@@ -16,7 +20,6 @@ import util.CoeCrawlController;
 
 public class Application extends Controller {
 
-
     public static void index() {
         render();
     }
@@ -24,16 +27,19 @@ public class Application extends Controller {
     public static void list() {
 
         List<Website> oldSites = Website.find("order by crawledAt desc").fetch(5);
-        renderJSON(oldSites);
+
+        JSONSerializer websiteSerializer = new JSONSerializer().include("id","url", "isCrawled", "crawledAt").exclude("*");
+        websiteSerializer.transform(new DateTransformer("yyyy-MM-dd HH:mm:ss"), "crawledAt");
+
+        renderJSON(websiteSerializer.serialize(oldSites));
     }
 
     @Transactional
     public static void crawlWebsite(@CheckWith(UrlExistenceValidator.class) String url) {
 
         if(validation.hasErrors()) {
-            params.flash(); // add http parameters to the flash scope
-            validation.keep(); // keep the errors for the next request
-            index();
+            response.status = 400;
+            renderText(validation.errors());
         }
         try {
             URL urlObject = new URL(url);
@@ -41,13 +47,22 @@ public class Application extends Controller {
             url = "http://" + url;
         }
         Website website = Website.findOrCreate(url);
-
-        CoeCrawlController.crawl(website, 1000);
+        if (!website.isCrawled) {
+            CoeCrawlController.crawl(website, 50);
+        }
+        renderJSON(website.id);
     }
 
     public static void show(Long id) {
         Website website = Website.findById(id);
         render(website);
+    }
+
+    public static void getLinksFromWebsite(Long id) {
+        Website website = Website.findById(id);
+        JSONSerializer linkSerializer = new JSONSerializer().include("id","path","links.id").exclude("*");
+        String json = linkSerializer.serialize(website.links);
+        renderJSON(linkSerializer.serialize(website.links));
     }
 
 

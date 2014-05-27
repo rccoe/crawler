@@ -27,12 +27,15 @@ public class CoeCrawlController extends CrawlController{
         website.save();
         String tempFolder = Play.configuration.getProperty("play.tmp");
         config.setCrawlStorageFolder(tempFolder);
-        config.setPolitenessDelay(300);
-        config.setMaxPagesToFetch(maxPages);
 
-        PageFetcher pageFetcher = new PageFetcher(config);
+        int politenessDelay = Integer.parseInt(Play.configuration.getProperty("play.politenessDelay"));
+        config.setPolitenessDelay(politenessDelay);
+        config.setMaxPagesToFetch(maxPages);
+        config.setIncludeHttpsPages(true);
+
+        PageFetcher pageFetcher = new CoeFetcher(config);
         RobotstxtConfig robotstxtConfig = new RobotstxtConfig();
-//        robotstxtConfig.setEnabled(false);
+        robotstxtConfig.setEnabled(false);
         RobotstxtServer robotstxtServer = new RobotstxtServer(robotstxtConfig, pageFetcher);
         try {
             CoeCrawlController controller = new CoeCrawlController(config, pageFetcher, robotstxtServer);
@@ -69,6 +72,7 @@ public class CoeCrawlController extends CrawlController{
             }
             saveLinks(website, masterLinkMap);
             website.isCrawled = true;
+            website.save();
             System.out.println(website.url + " Done, ready to check");
 
         }
@@ -79,12 +83,14 @@ public class CoeCrawlController extends CrawlController{
 
     private static void saveLinks (Website website, Map<String, Set<String>> linkMap) {
         System.out.println(new Date().toString() + " started saving");
+        int i = 0;
         for (Map.Entry<String, Set<String>> entry : linkMap.entrySet()) {
 
             Link sourceLink = website.addOrFindLink(entry.getKey());
 
             for (String destPath : entry.getValue()) {
                 sourceLink.addTargetLink(destPath);
+                System.out.println("Saved " + i++);
             }
         }
         System.out.println(new Date().toString() + " stopped saving");

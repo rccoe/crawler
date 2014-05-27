@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 /**
  * Robert Coe implementation of WebCrawler
  */
-public class CoeCrawler extends WebCrawler {
+public class    CoeCrawler extends WebCrawler {
 
 
     private int linksVisited;
@@ -56,41 +56,30 @@ public class CoeCrawler extends WebCrawler {
     @Override
     public void visit(Page page) {
         // Set root domain in controller customData if not there
+        System.out.println("Visiting " + page.getWebURL());
         if (myController.getCustomData() == null) {
             myController.setCustomData(page.getWebURL().getDomain());
         }
 
         if (page.getParseData() instanceof HtmlParseData) {
-            String sourcePath = page.getWebURL().getPath();
-            HtmlParseData htmlParseData = (HtmlParseData) page.getParseData();
-            List<WebURL> destUrls = htmlParseData.getOutgoingUrls();
+            String parentUrl = page.getWebURL().getParentUrl();
 
-            Set<String> destPathSet = filterUsableUrlsToPaths(destUrls);
+            WebURL parentWebURL = new WebURL();
+            parentWebURL.setURL(parentUrl);
+            String sourcePath = parentWebURL.getPath();
 
-            if (!localLinkMap.containsKey(sourcePath))
-                localLinkMap.put(page.getWebURL().getPath(), destPathSet);
+            if (!localLinkMap.containsKey(sourcePath)) {
+                Set<String> destPathSet = new HashSet<String>();
+                destPathSet.add(page.getWebURL().getPath());
+                localLinkMap.put(sourcePath, destPathSet);
+            }
             else {
                 Set<String> masterDestSet = localLinkMap.get(sourcePath);
-                masterDestSet.addAll(destPathSet);
+                masterDestSet.add(page.getWebURL().getPath());
             }
         }
     }
 
-    private Set<String> filterUsableUrlsToPaths(List<WebURL> urls) {
-        String domain = (String)myController.getCustomData();
-        Set<String> pathSet = new HashSet<String>();
-
-        for (WebURL url : urls) {
-            if (!url.getDomain().equals(domain)) {
-                break;
-            }
-            if (FILTERS.matcher(url.getPath()).matches()) {
-                break;
-            }
-            pathSet.add(url.getPath());
-        }
-        return pathSet;
-    }
 
     // This function is called by controller to get the local data of this
     // crawler when job is finished
