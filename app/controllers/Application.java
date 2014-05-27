@@ -7,7 +7,9 @@ import flexjson.transformer.DateTransformer;
 import play.data.validation.Check;
 import play.data.validation.CheckWith;
 import play.db.jpa.Transactional;
+import play.libs.F;
 import play.mvc.*;
+import play.jobs.*;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -17,6 +19,7 @@ import java.util.*;
 
 import models.*;
 import util.CoeCrawlController;
+import util.CoeCrawlerJob;
 
 public class Application extends Controller {
 
@@ -48,10 +51,27 @@ public class Application extends Controller {
         }
         Website website = Website.findOrCreate(url);
         if (!website.isCrawled) {
-            CoeCrawlController.crawl(website, 1000);
+            website.crawledAt = new Date();
+            website.save();
+            Job crawlJob = new CoeCrawlerJob(url, 1000);
+            F.Promise<Map<String,Set<String>>> promiseMap = crawlJob.now();
+            Map<String,Set<String>> linkMap = await(promiseMap);
+            website = Website.findById(website.id);
+            for (Map.Entry<String, Set<String>> entry : linkMap.entrySet()) {
+                Link sourceLink = website.addOrFindLink(entry.getKey());
+                for (String destPath : entry.getValue()) {
+                    sourceLink.addTargetLinkIfExists(destPath);
+                }
+            }
+
+            website.isCrawled = true;
+            website.save();
+            System.out.println(website.url + " Done, ready to check");
+
         }
         renderJSON(website.id);
     }
+
 
     public static void show(Long id) {
         Website website = Website.findById(id);

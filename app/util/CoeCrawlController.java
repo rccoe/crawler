@@ -10,21 +10,22 @@ import edu.uci.ics.crawler4j.url.WebURL;
 import models.Link;
 import models.Website;
 import play.Play;
+import play.libs.F;
 
 import java.util.*;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.RunnableFuture;
 
-public class CoeCrawlController extends CrawlController{
+public class CoeCrawlController extends CrawlController {
 
     public CoeCrawlController(CrawlConfig config, PageFetcher pageFetcher, RobotstxtServer robotstxtServer)
             throws Exception {
         super(config, pageFetcher, robotstxtServer);
     }
 
-    public static void crawl(Website website, int maxPages) {
+    public static Map<String, Set<String>> crawl(String url, int maxPages) {
+
         CrawlConfig config = new CrawlConfig();
-        website.crawledAt = new Date();
-        website.save();
         String tempFolder = Play.configuration.getProperty("play.tmp");
         config.setCrawlStorageFolder(tempFolder);
 
@@ -39,7 +40,7 @@ public class CoeCrawlController extends CrawlController{
         RobotstxtServer robotstxtServer = new RobotstxtServer(robotstxtConfig, pageFetcher);
         try {
             CoeCrawlController controller = new CoeCrawlController(config, pageFetcher, robotstxtServer);
-            controller.addSeed(website.url);
+            controller.addSeed(url);
 
             controller.start(CoeCrawler.class, 20, true);
 
@@ -70,31 +71,17 @@ public class CoeCrawlController extends CrawlController{
 
                 }
             }
-            saveLinks(website, masterLinkMap);
-            website.isCrawled = true;
-            website.save();
-            System.out.println(website.url + " Done, ready to check");
+            return masterLinkMap;
+
 
         }
         catch (Exception ex) {
             System.out.println(ex.toString());
+            return null;
         }
     }
 
-    private static void saveLinks (Website website, Map<String, Set<String>> linkMap) {
-        System.out.println(new Date().toString() + " started saving");
-        int i = 0;
-        for (Map.Entry<String, Set<String>> entry : linkMap.entrySet()) {
 
-            Link sourceLink = website.addOrFindLink(entry.getKey());
-
-            for (String destPath : entry.getValue()) {
-                sourceLink.addTargetLinkIfExists(destPath);
-                System.out.println("Saved " + i++);
-            }
-        }
-        System.out.println(new Date().toString() + " stopped saving");
-    }
 
     /*
         This method needed overriding for the following reasons:
