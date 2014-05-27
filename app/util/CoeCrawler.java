@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 /**
  * Robert Coe implementation of WebCrawler
  */
-public class    CoeCrawler extends WebCrawler {
+public class CoeCrawler extends WebCrawler {
 
 
     private int linksVisited;
@@ -37,6 +37,9 @@ public class    CoeCrawler extends WebCrawler {
     @Override
     public boolean shouldVisit(WebURL url) {
         String href = url.getURL().toLowerCase();
+        if (url.getAnchor() == null) {
+            return false;
+        }
         if (FILTERS.matcher(href).matches())
             return false;
 
