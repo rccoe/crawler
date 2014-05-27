@@ -65,9 +65,9 @@
 var getLinks = #{jsAction @getLinksFromWebsite(website.id) /};
 
 
-var diameter = 960,
+var diameter = 1200,
     radius = diameter / 2,
-    innerRadius = radius - 120;
+    innerRadius = radius - 200;
 
 var cluster = d3.layout.cluster()
     .size([360, innerRadius])
