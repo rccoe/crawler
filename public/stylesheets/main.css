@@ -19,14 +19,10 @@ body {
   position: relative;
   width: 100%;
   display: block;
+  text-align:center;
+
 }
 
-  body > *  {
-    margin: auto;
-    width: auto;
-    display: block;
-    overflow: auto;
-  }
 
   body > script {
     display: none

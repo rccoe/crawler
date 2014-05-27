@@ -17,7 +17,7 @@ GET     /sites/{id}                             Application.show
 
 POST    /crawlWebsite                           Application.crawlWebsite
 
-POST    /getLinksFromWebsite/{id}               Application.getLinksFromWebsite
+GET    /getLinksFromWebsite/{id}               Application.getLinksFromWebsite
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

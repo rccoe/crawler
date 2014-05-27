@@ -2,6 +2,54 @@
 #{set title:website.url /}
 
 
+<style>
+
+    .node {
+    font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    fill: #bbb;
+    }
+
+    .node:hover {
+    fill: #000;
+    }
+
+    .link {
+    stroke: steelblue;
+    stroke-opacity: .4;
+    fill: none;
+    pointer-events: none;
+    }
+
+    .node:hover,
+    .node--source,
+    .node--target {
+    font-weight: 700;
+    }
+
+    .node--source {
+    fill: #2ca02c;
+    }
+
+    .node--target {
+    fill: #d62728;
+    }
+
+    .link--source,
+    .link--target {
+    stroke-opacity: 1;
+    stroke-width: 2px;
+    }
+
+    .link--source {
+    stroke: #d62728;
+    }
+
+    .link--target {
+    stroke: #2ca02c;
+    }
+
+</style>
+
 #{if (!website.isCrawled)}
    <h1> Website not done crawling yet</h1>
    <h3> Crawling began at ${website.crawledAt} </h3>
@@ -17,143 +65,129 @@
 var getLinks = #{jsAction @getLinksFromWebsite(website.id) /};
 
 
+var diameter = 960,
+    radius = diameter / 2,
+    innerRadius = radius - 120;
 
+var cluster = d3.layout.cluster()
+    .size([360, innerRadius])
+    .sort(null)
+    .value(function(d) { return d.size; });
 
-function buildGraph(myLinks) {
-    var w = 960, h = 500;
+var bundle = d3.layout.bundle();
 
-    var labelDistance = 0;
+var line = d3.svg.line.radial()
+    .interpolate("bundle")
+    .tension(.85)
+    .radius(function(d) { return d.y; })
+    .angle(function(d) { return d.x / 180 * Math.PI; });
 
-    var vis = d3.select("body").append("svg:svg").attr("width", w).attr("height", h);
+var svg = d3.select("body").append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+  .append("g")
+    .attr("transform", "translate(" + radius + "," + radius + ")");
 
-    var nodes = [];
-    var labelAnchors = [];
-    var labelAnchorLinks = [];
-    var links = [];
+var link = svg.append("g").selectAll(".link"),
+    node = svg.append("g").selectAll(".node");
 
-    var map = {};
+d3.json(getLinks(), function(error, myLinks) {
+  var nodes = cluster.nodes(packageHierarchy(myLinks))
+  var links = packageLinks(nodes);
 
-   for(var i = 0; i < myLinks.length; i++) {
-				var node = {
-					label : myLinks[i].path
-				};
-				nodes.push(node);
-				map[myLinks[i].id] = i
-				labelAnchors.push({
-					node : node
-				});
-				labelAnchors.push({
-					node : node
-				});
-			};
+  link = link
+      .data(bundle(links))
+    .enter().append("path")
+      .each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
+      .attr("class", "link")
+      .attr("d", line);
 
-			for(var i = 0; i < nodes.length; i++) {
-                myLinks[i].links.forEach(function(toLink) {
-                    links.push({
-                        source : i,
-                        target : map[toLink.id],
-                        weight : 1
-                    })
-				});
+  node = node
+      .data(nodes.filter(function(n) { return !n.children; }))
+    .enter().append("text")
+      .attr("class", "node")
+      .attr("dy", ".31em")
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
+      .style("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+      .text(function(d) { return d.key; })
+      .on("mouseover", mouseovered)
+      .on("mouseout", mouseouted);
+});
 
-				labelAnchorLinks.push({
-					source : i * 2,
-					target : i * 2 + 1,
-					weight : 1
-				});
-			};
+function mouseovered(d) {
+  node
+      .each(function(n) { n.target = n.source = false; });
 
-    var force = d3.layout.force().size([w, h]).nodes(nodes).links(links).gravity(1).linkDistance(50).charge(-3000).linkStrength(function(x) {
-        return x.weight * 10
-    });
+  link
+      .classed("link--target", function(l) { if (l.target === d) return l.source.source = true; })
+      .classed("link--source", function(l) { if (l.source === d) return l.target.target = true; })
+    .filter(function(l) { return l.target === d || l.source === d; })
+      .each(function() { this.parentNode.appendChild(this); });
 
-
-    force.start();
-
-    var force2 = d3.layout.force().nodes(labelAnchors).links(labelAnchorLinks).gravity(0).linkDistance(0).linkStrength(8).charge(-100).size([w, h]);
-    force2.start();
-
-    var link = vis.selectAll("line.link").data(links).enter().append("svg:line").attr("class", "link").style("stroke", "#CCC");
-
-    var node = vis.selectAll("g.node").data(force.nodes()).enter().append("svg:g").attr("class", "node");
-    node.append("svg:circle").attr("r", 5).style("fill", "#555").style("stroke", "#FFF").style("stroke-width", 3);
-    node.call(force.drag);
-
-
-    var anchorLink = vis.selectAll("line.anchorLink").data(labelAnchorLinks)//.enter().append("svg:line").attr("class", "anchorLink").style("stroke", "#999");
-
-    var anchorNode = vis.selectAll("g.anchorNode").data(force2.nodes()).enter().append("svg:g").attr("class", "anchorNode");
-    anchorNode.append("svg:circle").attr("r", 0).style("fill", "#FFF");
-        anchorNode.append("svg:text").text(function(d, i) {
-        return i % 2 == 0 ? "" : d.node.label
-    }).style("fill", "#555").style("font-family", "Arial").style("font-size", 12);
-
-    var updateLink = function() {
-        this.attr("x1", function(d) {
-            return d.source.x;
-        }).attr("y1", function(d) {
-            return d.source.y;
-        }).attr("x2", function(d) {
-            return d.target.x;
-        }).attr("y2", function(d) {
-            return d.target.y;
-        });
-
-    }
-
-    var updateNode = function() {
-        this.attr("transform", function(d) {
-            return "translate(" + d.x + "," + d.y + ")";
-        });
-
-    }
-
-
-    force.on("tick", function() {
-
-        force2.start();
-
-        node.call(updateNode);
-
-        anchorNode.each(function(d, i) {
-            if(i % 2 == 0) {
-                d.x = d.node.x;
-                d.y = d.node.y;
-            } else {
-                var b = this.childNodes[1].getBBox();
-
-                var diffX = d.x - d.node.x;
-                var diffY = d.y - d.node.y;
-
-                var dist = Math.sqrt(diffX * diffX + diffY * diffY);
-
-                var shiftX = b.width * (diffX - dist) / (dist * 2);
-                shiftX = Math.max(-b.width, Math.min(0, shiftX));
-                var shiftY = 5;
-                this.childNodes[1].setAttribute("transform", "translate(" + shiftX + "," + shiftY + ")");
-            }
-        });
-
-
-        anchorNode.call(updateNode);
-
-        link.call(updateLink);
-        anchorLink.call(updateLink);
-
-    });
+  node
+      .classed("node--target", function(n) { return n.target; })
+      .classed("node--source", function(n) { return n.source; });
 }
 
-$(document).ready(function()
-   {
-    $.ajax( {type: "POST", url: getLinks(),
-                 success: function(myLinks) {
-                    buildGraph(myLinks);
+function mouseouted(d) {
+  link
+      .classed("link--target", false)
+      .classed("link--source", false);
+
+  node
+      .classed("node--target", false)
+      .classed("node--source", false);
+}
+
+d3.select(self.frameElement).style("height", diameter + "px");
+
+// Lazily construct the package hierarchy from class names.
+function packageHierarchy(myLinks) {
+  var map = {};
+
+  function find(path, data) {
+    var node = map[path], i;
+    if (!node) {
+      node = map[path] = data || {name: path, children: []};
+      if (path.length) {
+        node.parent = find(path.substring(0, i = path.lastIndexOf("/")));
+        if (typeof node.parent.children == "undefined")
+            node.parent.children = []
+        node.parent.children.push(node);
+        node.key = path;
+        node.name = path
+      }
+    }
+    return node;
+  }
+
+  myLinks.forEach(function(d) {
+    find(d.path, d);
+  });
+
+  return map[""];
+}
+
+// Return a list of links for the given array of nodes.
+function packageLinks(nodes) {
+  var map = {},
+      links = [];
+
+  // Compute a map from id to node.
+  nodes.forEach(function(d) {
+    map[d.id] = d;
+  });
+
+  // For each import, construct a link from the source to target node.
+  nodes.forEach(function(d) {
+    if (d.links) d.links.forEach(function(i) {
+      if (map[i.id])
+        links.push({source: map[d.id], target: map[i.id]});
+    });
+  });
+
+  return links;
+}
 
 
-                 },
-                 error: function(error, status) {
-                    alert(error + " " + status);
-                 }
-                 });
- });
 </script>

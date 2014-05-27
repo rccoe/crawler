@@ -41,7 +41,7 @@ public class CoeCrawlController extends CrawlController{
             CoeCrawlController controller = new CoeCrawlController(config, pageFetcher, robotstxtServer);
             controller.addSeed(website.url);
 
-            controller.start(CoeCrawler.class, 1, true);
+            controller.start(CoeCrawler.class, 20, true);
 
             List<Object> crawlersLocalDataList = controller.getCrawlersLocalData();
 

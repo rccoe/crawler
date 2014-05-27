@@ -48,7 +48,7 @@ public class Application extends Controller {
         }
         Website website = Website.findOrCreate(url);
         if (!website.isCrawled) {
-            CoeCrawlController.crawl(website, 50);
+            CoeCrawlController.crawl(website, 5000);
         }
         renderJSON(website.id);
     }
